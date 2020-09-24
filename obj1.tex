@@ -1,0 +1,71 @@
+\chapter{GA-based approaches for off-line \emph{RAC}}
+
+\section{Dataset}
+\begin{lstlisting}
+-- PH.D_project/data/baseConfig            # PM and VM configurations
+-- PH.D_project/data/containerData/static/single-objective/  # test instances
+\end{lstlisting}
+
+\begin{lstlisting}
+PMConfig_small.csv
+
+13200             # CPU capacity
+16000             # Memory capacity
+540               # Max energy consumption
+\end{lstlisting}
+
+\begin{lstlisting}
+VMConfig_ten.csv
+
+#CPU, #Memory
+719,2005
+917,951
+1032,1009
+1135,3542
+1231,1989
+1311,3238
+1363,2634
+1648,1538
+2047,1181
+2100,3013
+\end{lstlisting}
+
+\begin{lstlisting}
+Container1000_VM_twenty.csv
+
+Each row represents a container.
+
+#CPU, #Memory
+35.11,323.58
+140.4,248.49
+353.6,1736.7
+41.6,214.35
+156.05,379.56
+...
+\end{lstlisting}
+\section{Algorithm Code and Scripts}
+\subsection{Algorithm Code}
+
+\begin{lstlisting}
+Directories
+-- GA/src/cecGA 							# single-chromosome GA
+-- GA/src/GroupGA							# group GA
+-- GA/src/PermutationBasedGAForContainerAllocation/			# dual-chromosome GA
+\end{lstlisting}
+
+\subsection{Data Collection}
+\begin{lstlisting}
+-- PH.D_project/experimentScripts/singleObjectiveStaticAllocation/collect.sh			
+# This is the main collection script. It will execute all the sub-scripts
+-- ...sh
+\end{lstlisting}
+
+
+\begin{lstlisting}
+collect.sh
+
+Usage:
+
+./collect.sh [alg = groupGA | dualPermutation | cecGA] [vmTypes = ten | twenty] 
+[appNum = 200 | 500 | 1000 | 1500]
+\end{lstlisting}

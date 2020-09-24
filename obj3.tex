@@ -1,0 +1,157 @@
+\chapter{EC for Multi-objective \emph{RAC}}
+
+\section{Dataset}
+\begin{lstlisting}
+Dataset Directories:
+-- data/containerData/static/multi_objective
+-- data/containerData/static/spaceEstimation
+\end{lstlisting}
+
+% \begin{lstlisting}
+% PM Configuration Files:
+% -- data/baseConfig/PMConfig/PMConfig_small.csv
+% \end{lstlisting}
+
+% \begin{lstlisting}
+% VM Configuration Files:
+% -- baseConfig/VMConfig/LVMnePM/VMConfig_ten.csv
+% -- baseConfig/VMConfig/LVMnePM/VMConfig_twenty.csv
+% \end{lstlisting}
+
+
+% \subsection{Configuration Files}
+
+
+% \begin{lstlisting}
+% Algorithm Configuration Files:
+% -- baseConfig/VMConfig/LVMnePM/VMConfig_ten.csv
+% -- baseConfig/VMConfig/LVMnePM/VMConfig_twenty.csv
+% \end{lstlisting}
+
+% \subsection{Application Files}
+The application files describes the information of applications including the number of applications,
+each application is consist of how many micro-services, and the number of replicas for each micro-services. 
+The application files are named as \textit{application} + \textit{number of application} + .csv.
+\begin{lstlisting}
+application file
+			
+application50.csv
+application100.csv
+application150.csv
+application200.csv
+\end{lstlisting}
+
+
+
+The data structure of application files are :
+\begin{lstlisting}
+micro-service 1, micro-service 2, ..., micro-service 5
+2,4,0,0,0
+3,0,0,0,0
+3,4,4,2,5
+3,4,2,3,2
+\end{lstlisting}
+
+Each row represents an application. 
+Each column represents a micro-service. In the current setting, each
+application has maximum of 5 micro-services. The number of each index denotes the number of replicas of that micro-service. For example, in the first row of the above dataset, [2, 4, 0, 0, 0] 
+denotes application 1 is consist of 2 micro-services. Micro-service 1 has 2 replicas and micro-service 2 has 4 replicas.
+
+The constraint for the number of replicas is defined as following. 
+The lower bound is 2. 
+The upper bound is 5.
+0 means the micro-service does not exist.
+
+ 
+\subsubsection{TestCase Files}
+
+The testCase files contain the detailed resource requirement of replicas.
+The testCases and application files are 1-on-1 mapping. 
+For example, \textit{testCase50.csv} and \textit{application50.csv} are describing the same instance. 
+The application files are named as \textit{application} + \textit{number of application} + .csv.
+ meaning application50.csv
+\begin{lstlisting}
+# testCase file 
+
+testCase50.csv
+testCase100.csv
+testCase150.csv
+testCase200.csv
+\end{lstlisting}
+
+
+
+\begin{lstlisting}
+# testCase data structure
+
+CPU, MEM, applicationId, micro-serviceId, replicaId
+53.73,244.39,1,1,1
+53.73,244.39,1,1,2
+255.54,410.96,1,2,1
+255.54,410.96,1,2,2
+\end{lstlisting}
+
+Notice that, in experiments of variable size of replicas, the number of
+replicas is determined by algorithm. Although we are using the same dataset,
+the number of replica is not used. 
+
+
+\section{Algorithm Code and Scripts}
+
+\subsection{Algorithm Code}
+\begin{lstlisting}
+-- GA/src/LNS_FF        	# Large-neighbourhood search and FF
+-- GA/src/LNS_NS-GGA    	# LNS and NS-GGA
+-- GA/src/NSGAII_NS-GGA 	# NSGAII and NS-GGA
+-- GA/src/NSGAII_Spread 	# NSGAII and Spread
+-- LNBPSO/src/LNS_BPSO		# LNS and BPSO
+\end{lstlisting}
+\subsection{Scripts}
+
+\subsubsection{Grid}
+\begin{lstlisting}
+-- PH.D_project/gridScripts/multiObj_VariableReplicas/run_ga.sh
+-- PH.D_project/gridScripts/multiObj_VariableReplicas/ga.sh
+-- PH.D_project/gridScripts/multiObj_VariableReplicas/run_bpso.sh
+-- PH.D_project/gridScripts/multiObj_VariableReplicas/bpso.sh
+\end{lstlisting}
+
+\begin{lstlisting}
+run_ga.sh
+
+Usage:
+
+./run_ga.sh [algorithm = NSGAII_NSGGA | LNS_FF | NSGAII_Spread | LNS_NSGGA ] 
+[appSize = app100 | app150 | app200] [vmTypes = ten | twenty]
+\end{lstlisting}
+
+\begin{lstlisting}
+run_bpso.sh
+
+Usage: 
+
+./run.sh [algorithm = NSGAII_NSGGA | LNS_FF | NSGAII_Spread | LNS_NSGGA ] 
+[appSize = app100 | app150 | app200] [vmTypes = ten | twenty]
+
+\end{lstlisting}
+
+\subsubsection{For Data Collection}
+
+\begin{lstlisting}
+-- PH.D_project/experimentScripts/multiObjectiveStaticAllocation/collect.sh			
+# This is the main collection script. It will execute all the sub-scripts
+-- ...sh
+\end{lstlisting}
+
+\begin{lstlisting}
+Usage 
+
+./collect.sh [alg = multiGroupGA] [vmTypes = ten | twenty] [appNum = 150]
+Example:
+
+./collect.sh multiGroupGA ten 150
+\end{lstlisting}
+
+\subsubsection{For Data Analysis}
+
+

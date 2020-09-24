@@ -1,0 +1,22 @@
+\contentsline {chapter}{\numberline {1}GA-based approaches for off-line \emph {RAC}}{3}%
+\contentsline {section}{\numberline {1.1}Dataset}{3}%
+\contentsline {section}{\numberline {1.2}Algorithm Code and Scripts}{3}%
+\contentsline {subsection}{\numberline {1.2.1}Algorithm Code}{3}%
+\contentsline {subsection}{\numberline {1.2.2}Data Collection}{4}%
+\contentsline {chapter}{\numberline {2}GP-based Approaches for On-line \emph {RAC}}{5}%
+\contentsline {section}{\numberline {2.1}Dataset}{5}%
+\contentsline {section}{\numberline {2.2}Algorithm Code and Scripts}{6}%
+\contentsline {subsection}{\numberline {2.2.1}Algorithm Code}{6}%
+\contentsline {subsection}{\numberline {2.2.2}Scripts}{6}%
+\contentsline {subsubsection}{For Test Instance Generation}{6}%
+\contentsline {subsubsection}{For Run Experiments}{7}%
+\contentsline {subsubsection}{For Data Analysis}{9}%
+\contentsline {chapter}{\numberline {3}EC for Multi-objective \emph {RAC}}{11}%
+\contentsline {section}{\numberline {3.1}Dataset}{11}%
+\contentsline {subsubsection}{TestCase Files}{11}%
+\contentsline {section}{\numberline {3.2}Algorithm Code and Scripts}{12}%
+\contentsline {subsection}{\numberline {3.2.1}Algorithm Code}{12}%
+\contentsline {subsection}{\numberline {3.2.2}Scripts}{12}%
+\contentsline {subsubsection}{Grid}{12}%
+\contentsline {subsubsection}{For Data Collection}{13}%
+\contentsline {subsubsection}{For Data Analysis}{13}%

@@ -1,0 +1,262 @@
+\chapter{GP-based Approaches for On-line \emph{RAC}}
+
+
+\section{Dataset}
+\begin{lstlisting}
+-- PH.D_project/data/baseConfig            # PM and VM configurations
+-- PH.D_project/data/containerData/dynamic/  # training and test instances
+-- PH.D_project/data/InitEnv/              # Initial data center
+-- PH.D_project/data/OSData/dynamic/	   # The OS requirements for the containers in the test instances 
+-- PH.D_project/data/OSPro/			# OS probabilities
+\end{lstlisting}
+
+\begin{lstlisting}
+InitEnv
+	-- container.csv   # The initial containers
+	-- os.csv		   # The OS of VMs	
+	-- pm.csv		   # The initial PMs
+	-- vm.csv          # The initial VMs
+\end{lstlisting}
+
+\begin{lstlisting}
+container.csv
+
+#CPU, #Mem
+26,98.3
+175.56,425.98
+27.73,252.58
+6.93,125.61
+\end{lstlisting}
+
+\begin{lstlisting}
+os.csv
+
+# OS type of each VM
+1
+2
+2
+...
+\end{lstlisting}
+
+\begin{lstlisting}
+pm.csv
+
+# Each row represents a PM. The numbers in each row represent the type of VM in this PM
+
+10,10
+6,1
+9,2,4,9
+2
+2
+...
+\end{lstlisting}
+
+\begin{lstlisting}
+vm.csv
+
+# Each row represents a VM. The numbers in each row represent the indexes of containers.
+
+1,2,3,4
+5,6
+7,8,9,10
+11
+12,13,14,15
+...
+\end{lstlisting}
+
+\begin{lstlisting}
+-- PH.D_project/data/OSPro/OS5/probability.csv
+
+# the probability of each type of OS
+0.179
+0.454
+0.236
+0.105
+0.026
+\end{lstlisting}
+
+
+\section{Algorithm Code and Scripts}
+\subsection{Algorithm Code}
+
+\begin{lstlisting}
+Directories
+-- ContainerAllocationCCGP # For CCGP training
+-- ContainerAllocationGPHH # For GPHH training
+-- containerAllocation 	   # For simulation, or testing
+\end{lstlisting}
+
+
+\subsection{Scripts}
+\subsubsection{For Test Instance Generation}
+\begin{lstlisting}
+Directories:
+-- PHD_project/dataGenerationScripts/generateTaskCases.R          
+# For generating individual test instances
+
+-- PHD_project/data/dataGenerationScripts/generateOSCases.R       
+# For generating the OS requirements for these test instances
+
+-- PHD_project/data/dataGenerationScripts/generateBaseDataCenter.R  
+# For generating the initial data center
+\end{lstlisting}
+
+
+\begin{flushleft}\textbf{generateTaskCases.R}\end{flushleft}
+
+\begin{lstlisting}
+Usages:
+
+generateTask(
+	whichDataSet=[1:auvergrid | 2:bitbrains], 
+	whichVMsize=[ 6:ten types | 7:twenty types ], 
+	size = 2500, 
+	testCase, filename='')
+
+Example: 
+
+for (i in seq(0,199)) 
+	generateTask(1, 6, 2500, i, paste('./container2500/testCase', i, '.csv', sep=''))")
+\end{lstlisting}
+
+
+\begin{flushleft}\textbf{generateOSCases.R}\end{flushleft}
+
+\begin{lstlisting}
+generateOScases(
+	size=2500, 
+	numOfOS=[3 | 4 | 5], 
+	testCase, 
+	filename='')
+
+Example:
+
+for(i in seq(0, 199)) 
+	generateOScases(2500, 5, i, paste('./OS1Container1000/testCase', i, '.csv', sep=''))")
+\end{lstlisting}
+
+\begin{flushleft}\textbf{generateBaseDataCenter.R}\end{flushleft}
+
+\begin{lstlisting}
+generateBaseDataCenter(
+	testCaseSize=2500, 
+	OSNum=[3 | 4 | 5], 
+	testCase)
+
+Example:
+
+for(i in seq(0, 199)) 
+	generateOScases(2500, 5, i)
+\end{lstlisting}
+
+
+\subsubsection{For Run Experiments}
+The grid scripts for GPHH and CCGP training,
+\begin{lstlisting}
+Directories:
+-- PHD_project/gridScripts/CCGP/ccgp.sh   # The configuration scripts
+-- PHD_project/gridScripts/CCGP/run.sh	  # submit 40 runs
+
+-- PHD_project/gridScripts/GPHH/gphh.sh
+-- PHD_project/gridScripts/GPHH/run.sh
+\end{lstlisting}
+
+
+\begin{lstlisting}
+Usage:
+
+./run.sh [vmtypes = TEN | TWENTY] [OSNUM = 5] [dataset = BITBRAINS | AUVERGRID]
+
+Example:
+
+./run.sh TEN 5 BITBRAINS
+\end{lstlisting}
+
+\begin{flushleft}\textbf{The scripts for data collection:}\end{flushleft}
+
+\begin{lstlisting}
+-- dynamicContainerAllocation/scriptCCGP/execute.sh
+--	...
+-- dynamicContainerAllocation/scriptGPHH/execute.sh
+--  ...
+\end{lstlisting}
+
+
+\begin{lstlisting}
+Usage:
+
+./collect.sh [alg = CCGP] [osNum=5] [vmNum=TWENTY | TEN] [dataset=AUVERGRID | BITBRAINS]
+
+Example:
+
+./collect.sh CCGP 5 TWENTY AUVERGRID
+\end{lstlisting}
+
+
+
+\begin{flushleft}\textbf{The scripts for testing:}\end{flushleft}
+Before test, the simulation must be correctly configured in the program.
+
+
+\begin{flushleft}The example shows how to test a GPHH rule on the Auvergrid dataset with 10 VM types.\end{flushleft}
+\begin{lstlisting}
+In containerAllocation/src/Experiment_selection_creation_combined.java:
+
+        experimentRunner(
+                run,
+                folder,
+                TestDataSet.AUVERGRID_TEN,
+                TestCaseSizes.xLarge,
+                OperatingSystems.THREE,
+                FitnessFunctions.EVO, // vm selection rule
+                FitnessFunctions.SUB, // pm selection rule
+                VMCreationRules.EVO,
+                VMAllocationFramework.ANYFIT, 	// vm selection-creation framework, when 
+                				// select NONANYFIT framework,
+                                                // the VMCreationRules will be 
+                                                // automatically canceled.
+                SelectionRules.FIRSTFIT, 	// pm selection framework,
+                                        	// If we choose FirstFit, then, the fitness functions 
+                                        	// of pm selection rule will be ignored
+                PMCreationRules.LARGEST); 	// No other choice
+    }
+\end{lstlisting}
+
+\begin{flushleft}After compiling the code, you may use the testing script to test.
+Then, the testing script:\end{flushleft}
+
+\begin{lstlisting}
+--PH.D_project/experimentScripts/dynamicAllocation/experimentRunningScripts/runSingleExperiment.sh
+--PH.D_project/experimentScripts/dynamicAllocation/experimentRunningScripts/test30Runs.sh
+\end{lstlisting}
+
+
+\begin{lstlisting}
+Usage:
+
+./test30Runs.sh [Path]
+
+Example:
+
+./test30Runs.sh ./Container2500_AUVERGRID_TEN  
+# where the collected rules are in the Container2500_AUVERGRID_TEN
+\end{lstlisting}
+
+
+\subsubsection{For Data Analysis}
+\begin{lstlisting}
+--PH.D_project/experimentScripts/dynamicAllocation/statScripts/
+	-- barPlotEvoCompare.R  # plot bar chart to compare GPHH and CCGP
+	-- barPlotPm.R          # plot bar chart of PM number
+	-- barplotVmDist.R      # plot bar chart of VM distribution
+	-- calVmNum.R           # calculate the number of VMs used
+	-- energyAveSd.R        # calculate the mean and sd of a scenario
+	-- meanPmRemain.R 		# calculate the mean PM resource remaining
+	-- meanPmUtil.R   		# calculate the mean PM resource utilization
+	-- plotWaste.R          # plot line chart of waste resources
+	-- stat_of_30_general.R # statistic significant test
+	-- vmDist20.R           # calculate the frequency of 20 VM types
+	-- vmDist.R             # calculate the frequency of 10 VM types
+\end{lstlisting}
+
+The usage of each script is record in the scripts and will be printed out when first load them.

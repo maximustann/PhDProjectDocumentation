@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1600317849 "obj3.tex" "obj3.pdf" "obj3" 1600317849
+  "/etc/texmf/texmf.cnf" 1593929842 38735 f5636d5a2a915eef5c342faa6cab699b ""
+  "/usr/pkg/share/texmf-dist/fonts/map/fontname/texfonts.map" 1594003893 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/pkg/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1593930443 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1594082967 2053855 ec48d108d4dde3c9223b016c6968f480 ""
+  "obj3.aux" 1600317799 2413 4122f6dbe8b35b0730465813f409f331 ""
+  "obj3.tex" 1595801860 3224 73da0d96607d056948449446f2388a0d ""
+  (generated)
+  "obj3.log"
+  "obj3.pdf"

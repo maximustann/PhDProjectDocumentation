@@ -1,0 +1,302 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/pkgsrc) (preloaded format=pdflatex 2020.7.7)  24 SEP 2020 17:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**experiment_instruction.tex
+(./experiment_instruction.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-05-05>
+(/usr/pkg/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/pkg/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/pkg/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count176
+\float@exts=\toks15
+\float@box=\box45
+\@float@everytoks=\toks16
+\@floatcapt=\box46
+)
+(/usr/pkg/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/pkg/share/texmf-dist/tex/latex/listings/listings.sty
+(/usr/pkg/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\lst@mode=\count177
+\lst@gtempboxa=\box47
+\lst@token=\toks18
+\lst@length=\count178
+\lst@currlwidth=\dimen135
+\lst@column=\count179
+\lst@pos=\count180
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
+\lst@newlines=\count181
+\lst@lineno=\count182
+\lst@maxwidth=\dimen138
+
+(/usr/pkg/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count183
+\lst@skipnumbers=\count184
+\lst@framebox=\box48
+)
+(/usr/pkg/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+\@float@every@fig=\toks19
+\c@fig=\count185
+
+(/vol/tex-local/tex/latex/local/vuwproject.sty
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+)
+VUW Honours reports modifications -- Mar 1995
+Modified to handle different degrees 2003
+Modified to handle duplex printing properly 2006
+\@abstract=\box49
+) (/usr/pkg/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-05-05 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count186
+\l__pdf_internal_box=\box50
+)
+(./experiment_instruction.aux (./obj1.aux) (./obj2.aux) (./obj3.aux))
+\openout1 = `experiment_instruction.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 6
+0.
+
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+\c@lstlisting=\count187
+\big@size=\dimen139
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
+77.
+
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
+77.
+
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
+77.
+
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
+77.
+
+(/usr/pkg/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+) [-1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [0] (./experiment_instruct
+ion.toc)
+\tf@toc=\write3
+\openout3 = `experiment_instruction.toc'.
+
+ [1
+
+
+]
+[2
+
+]
+Overfull \hbox (62.97789pt too wide) in paragraph at lines 97--98
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.22821pt too wide) in paragraph at lines 98--99
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][] 
+ []
+
+
+Overfull \hbox (68.22784pt too wide) in paragraph at lines 99--100
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (183.72684pt too wide) in paragraph at lines 100--101
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][] 
+ []
+
+[1
+
+]
+\openout2 = `obj1.aux'.
+
+ (./obj1.tex [2
+
+
+]
+Chapter 1.
+[3]
+Overfull \hbox (52.47798pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (41.97807pt too wide) in paragraph at lines 53--54
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (62.97789pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+) [4]
+\openout2 = `obj2.aux'.
+
+ (./obj2.tex
+Chapter 2.
+
+Overfull \hbox (110.22748pt too wide) in paragraph at lines 9--10
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (15.7283pt too wide) in paragraph at lines 44--46
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[5
+
+
+
+]
+Overfull \hbox (20.97826pt too wide) in paragraph at lines 57--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[6]
+Overfull \hbox (36.72812pt too wide) in paragraph at lines 119--120
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.47798pt too wide) in paragraph at lines 135--136
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7]
+Overfull \hbox (20.97826pt too wide) in paragraph at lines 188--190
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (20.97826pt too wide) in paragraph at lines 214--215
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (89.22766pt too wide) in paragraph at lines 219--220
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.7283pt too wide) in paragraph at lines 220--221
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (73.4778pt too wide) in paragraph at lines 229--230
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.22821pt too wide) in paragraph at lines 230--231
+[][][][][][][][][][][][][][][][] 
+ []
+
+[8]) [9]
+\openout2 = `obj3.aux'.
+
+ (./obj3.tex [10
+
+
+
+]
+Chapter 3.
+[11]
+Overfull \hbox (62.97789pt too wide) in paragraph at lines 141--142
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+[12]) [13] [14
+
+
+]
+No file experiment_instruction.bbl.
+(./experiment_instruction.aux (./obj1.aux) (./obj2.aux) (./obj3.aux)) ) 
+Here is how much of TeX's memory you used:
+ 2457 strings out of 481237
+ 33563 string characters out of 5925491
+ 290304 words of memory out of 5000000
+ 18164 multiletter control sequences out of 15000+600000
+ 558395 words of font info for 83 fonts, out of 8000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 28i,5n,36p,290b,1579s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/pk
+g/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/pkg/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw
+/palatino/uplb8a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplbi8
+a.pfb></usr/pkg/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/pkg/
+share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/pkg/share/texmf-dis
+t/fonts/type1/vuw/vuw20.pfb>
+Output written on experiment_instruction.pdf (18 pages, 102427 bytes).
+PDF statistics:
+ 87 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
